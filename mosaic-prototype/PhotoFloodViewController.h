@@ -7,7 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Photo.h"
+#import "PhotoFlood.h"
 
 @interface PhotoFloodViewController : UIViewController
+    <PhotoDelegate>
+{
+    PhotoFlood *photoFlood;
+}
 
+- (void)fetchPhotoData;
 @end

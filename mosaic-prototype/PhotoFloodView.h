@@ -8,8 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import <QuartzCore/QuartzCore.h>
+#import "Photo.h"
+#import "PhotoFlood.h"
 
 @interface PhotoFloodView : UIView
+    <PhotoDelegate>
 {
     CALayer *photoLayer;
     CAShapeLayer *controlLayer;
@@ -22,7 +25,10 @@
     CGPoint touchLastChange;
 }
 
-@property (nonatomic, strong) NSArray *photos;
+extern const float PHOTO_VIEW_RATE;
+
+@property (nonatomic, strong) PhotoFlood *photoFlood;
+@property (nonatomic, readonly) BOOL isStarted;
 
 - (void)start;
 

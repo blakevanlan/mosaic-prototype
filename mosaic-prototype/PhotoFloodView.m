@@ -7,9 +7,13 @@
 //
 
 #import "PhotoFloodView.h"
+#import "Photo.h"
 
 @implementation PhotoFloodView
 
+@synthesize photoFlood, isStarted;
+
+const float PHOTO_VIEW_RATE = 0.25f;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -93,9 +97,24 @@
     [self showButtons];
 }
 
+- (void)photoReady:(Photo *)photo
+{
+    int count = [photoFlood count];
+    int loaded = [photoFlood numLoadedPhotos];
+    float totalViewTime = count * PHOTO_VIEW_RATE;
+    float remainingDownloadTime = [photoFlood averageLoadTime] * (count - loaded);
+    
+    NSLog(@"average: %f", [photoFlood averageLoadTime]);
+    
+    if (!isStarted && totalViewTime > remainingDownloadTime) {
+        [self start];
+    }
+}
+
 - (void)start
 {
-    currentTimer = [NSTimer scheduledTimerWithTimeInterval:0.25
+    isStarted = YES;
+    currentTimer = [NSTimer scheduledTimerWithTimeInterval:PHOTO_VIEW_RATE
                                      target:self
                                    selector:@selector(nextTick:)
                                    userInfo:nil
@@ -110,7 +129,7 @@
 - (void)nextTick:(NSTimer *)timer
 {
     [self nextImage:1];
-    if (currentImage == [[self photos] count] - 1) {
+    if (currentImage == [[self photoFlood] count] - 1) {
         [self stop];
     }
 }
@@ -128,10 +147,11 @@
 - (void)showImage:(int)index
 {
     if (index < 0) index = 0;
-    else if (index >= [[self photos] count]) index = [[self photos] count] - 1;
+    else if (index >= [[self photoFlood] count]) index = [[self photoFlood] count] - 1;
     
     // create a UIImage
-    UIImage *layerImage = [UIImage imageWithContentsOfFile:[[self photos] objectAtIndex:index]];
+    Photo *photo = [[self photoFlood] photoAtIndex:index];
+    UIImage *layerImage = [UIImage imageWithContentsOfFile:[photo filePath]];
     
     // get the underlying CGImage
     CGImageRef image = [layerImage CGImage];
@@ -139,7 +159,7 @@
     
     int sliderWidth = [sliderLayer bounds].size.width;
     double available = [controlLayer bounds].size.width - sliderWidth;
-    double percent = (double)index / [[self photos] count];
+    double percent = (double)index / [[self photoFlood] count];
     
     [CATransaction begin];
     [CATransaction setDisableActions:YES];
@@ -257,7 +277,7 @@
     if (x < 0) x = 0.0;
     else if (x > available) x = available;
     
-    [self showImage: (int)round([[self photos] count] * x / available)];
+    [self showImage: (int)round([[self photoFlood] count] * x / available)];
     touchLastChange = loc;
 }
 

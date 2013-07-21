@@ -16,3 +16,8 @@ profile
 *.moved-aside
 DerivedData
 .idea/
+*~nib
+
+# Exclude the Podspecs
+Pods/*
+Podfile.lock

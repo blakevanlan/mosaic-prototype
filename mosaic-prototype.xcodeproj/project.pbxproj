@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2DBDE33C94E14D7BA7B117D3 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 21E8EC621ACF42D1ABD23D38 /* libPods.a */; };
+		7B11E8641754696C009E564D /* PhotoFlood.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B11E8631754696C009E564D /* PhotoFlood.m */; };
 		7B7B5376173DF2A9004BEFF4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B7B5375173DF2A9004BEFF4 /* UIKit.framework */; };
 		7B7B5378173DF2A9004BEFF4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B7B5377173DF2A9004BEFF4 /* Foundation.framework */; };
 		7B7B537A173DF2A9004BEFF4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B7B5379173DF2A9004BEFF4 /* CoreGraphics.framework */; };
@@ -271,9 +273,15 @@
 		7B7B5590173DF351004BEFF4 /* PhotoFloodView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B7B558C173DF351004BEFF4 /* PhotoFloodView.m */; };
 		7B7B5591173DF351004BEFF4 /* PhotoFloodViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B7B558E173DF351004BEFF4 /* PhotoFloodViewController.m */; };
 		7B7B5593173DF3EF004BEFF4 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B7B5592173DF3EF004BEFF4 /* QuartzCore.framework */; };
+		7BDB372217990D12005FDF24 /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BDB372117990D12005FDF24 /* Photo.m */; };
+		7BDB3726179B36C0005FDF24 /* TimedAFImageRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BDB3725179B36C0005FDF24 /* TimedAFImageRequestOperation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0ADFD254BB1442B4A89D67C1 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		21E8EC621ACF42D1ABD23D38 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		7B11E8621754696C009E564D /* PhotoFlood.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoFlood.h; sourceTree = "<group>"; };
+		7B11E8631754696C009E564D /* PhotoFlood.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoFlood.m; sourceTree = "<group>"; };
 		7B7B5372173DF2A9004BEFF4 /* mosaic-prototype.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mosaic-prototype.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B7B5375173DF2A9004BEFF4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		7B7B5377173DF2A9004BEFF4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -544,6 +552,10 @@
 		7B7B558E173DF351004BEFF4 /* PhotoFloodViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoFloodViewController.m; sourceTree = "<group>"; };
 		7B7B558F173DF351004BEFF4 /* PhotoFloodViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoFloodViewController.h; sourceTree = "<group>"; };
 		7B7B5592173DF3EF004BEFF4 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		7BDB372017990D12005FDF24 /* Photo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Photo.h; sourceTree = "<group>"; };
+		7BDB372117990D12005FDF24 /* Photo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Photo.m; sourceTree = "<group>"; };
+		7BDB3724179B36C0005FDF24 /* TimedAFImageRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TimedAFImageRequestOperation.h; path = "mosaic-prototype/TimedAFImageRequestOperation.h"; sourceTree = "<group>"; };
+		7BDB3725179B36C0005FDF24 /* TimedAFImageRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TimedAFImageRequestOperation.m; path = "mosaic-prototype/TimedAFImageRequestOperation.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -556,6 +568,7 @@
 				7B7B5378173DF2A9004BEFF4 /* Foundation.framework in Frameworks */,
 				7B7B537A173DF2A9004BEFF4 /* CoreGraphics.framework in Frameworks */,
 				7B7B537C173DF2A9004BEFF4 /* CoreData.framework in Frameworks */,
+				2DBDE33C94E14D7BA7B117D3 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -565,11 +578,13 @@
 		7B7B5369173DF2A9004BEFF4 = {
 			isa = PBXGroup;
 			children = (
+				7BDB3723179B368C005FDF24 /* utils */,
 				7B7B5592173DF3EF004BEFF4 /* QuartzCore.framework */,
 				7B7B5397173DF33D004BEFF4 /* instagram */,
 				7B7B537D173DF2A9004BEFF4 /* mosaic-prototype */,
 				7B7B5374173DF2A9004BEFF4 /* Frameworks */,
 				7B7B5373173DF2A9004BEFF4 /* Products */,
+				0ADFD254BB1442B4A89D67C1 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -588,6 +603,7 @@
 				7B7B5377173DF2A9004BEFF4 /* Foundation.framework */,
 				7B7B5379173DF2A9004BEFF4 /* CoreGraphics.framework */,
 				7B7B537B173DF2A9004BEFF4 /* CoreData.framework */,
+				21E8EC621ACF42D1ABD23D38 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -601,7 +617,11 @@
 				7B7B558F173DF351004BEFF4 /* PhotoFloodViewController.h */,
 				7B7B5386173DF2A9004BEFF4 /* AppDelegate.h */,
 				7B7B5387173DF2A9004BEFF4 /* AppDelegate.m */,
+				7B11E8621754696C009E564D /* PhotoFlood.h */,
+				7B11E8631754696C009E564D /* PhotoFlood.m */,
 				7B7B538F173DF2AA004BEFF4 /* mosaic_prototype.xcdatamodeld */,
+				7BDB372017990D12005FDF24 /* Photo.h */,
+				7BDB372117990D12005FDF24 /* Photo.m */,
 				7B7B537E173DF2A9004BEFF4 /* Supporting Files */,
 			);
 			path = "mosaic-prototype";
@@ -878,6 +898,15 @@
 			path = instagram;
 			sourceTree = "<group>";
 		};
+		7BDB3723179B368C005FDF24 /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				7BDB3724179B36C0005FDF24 /* TimedAFImageRequestOperation.h */,
+				7BDB3725179B36C0005FDF24 /* TimedAFImageRequestOperation.m */,
+			);
+			name = utils;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -885,9 +914,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7B7B5394173DF2AA004BEFF4 /* Build configuration list for PBXNativeTarget "mosaic-prototype" */;
 			buildPhases = (
+				5D733C1308D148BDAFF6E6F4 /* Check Pods Manifest.lock */,
 				7B7B536E173DF2A9004BEFF4 /* Sources */,
 				7B7B536F173DF2A9004BEFF4 /* Frameworks */,
 				7B7B5370173DF2A9004BEFF4 /* Resources */,
+				B11FD095D2FC4A94B287C2D7 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1188,6 +1219,39 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5D733C1308D148BDAFF6E6F4 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B11FD095D2FC4A94B287C2D7 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		7B7B536E173DF2A9004BEFF4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -1198,6 +1262,9 @@
 				7B7B5391173DF2AA004BEFF4 /* mosaic_prototype.xcdatamodeld in Sources */,
 				7B7B5590173DF351004BEFF4 /* PhotoFloodView.m in Sources */,
 				7B7B5591173DF351004BEFF4 /* PhotoFloodViewController.m in Sources */,
+				7B11E8641754696C009E564D /* PhotoFlood.m in Sources */,
+				7BDB372217990D12005FDF24 /* Photo.m in Sources */,
+				7BDB3726179B36C0005FDF24 /* TimedAFImageRequestOperation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1265,6 +1332,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -1273,6 +1341,7 @@
 		};
 		7B7B5395173DF2AA004BEFF4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0ADFD254BB1442B4A89D67C1 /* Pods.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "mosaic-prototype/mosaic-prototype-Prefix.pch";
@@ -1284,6 +1353,7 @@
 		};
 		7B7B5396173DF2AA004BEFF4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0ADFD254BB1442B4A89D67C1 /* Pods.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "mosaic-prototype/mosaic-prototype-Prefix.pch";
@@ -1312,6 +1382,7 @@
 				7B7B5396173DF2AA004BEFF4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
