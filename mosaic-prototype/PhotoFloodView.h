@@ -19,6 +19,7 @@
     CAShapeLayer *sliderLayer;
     CAShapeLayer *rightButtonLayer;
     CAShapeLayer *leftButtonLayer;
+    CAShapeLayer *loadingLayer;
     
     NSTimer *currentTimer;
     int currentImage;

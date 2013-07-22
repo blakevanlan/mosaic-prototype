@@ -52,6 +52,16 @@ const float PHOTO_VIEW_RATE = 0.25f;
     [controlLayer setStrokeColor:[[[UIColor alloc] initWithWhite:1.0 alpha:0.6] CGColor]];
     [controlLayer setMasksToBounds:YES];
     
+    loadingLayer = [[CAShapeLayer alloc] init];
+    [loadingLayer setBounds:CGRectMake(0.0, 0.0, 306.0, 10.0)];
+    [loadingLayer setPosition:CGPointMake(-153.0, 7.0)];
+    [loadingLayer setZPosition:1.0];
+    
+    [loadingLayer setPath:[linePath CGPath]];
+    [loadingLayer setLineWidth:1];
+    [loadingLayer setStrokeColor:[[UIColor redColor] CGColor]];
+    [loadingLayer setMasksToBounds:YES];
+    
     
     CGRect rect = CGRectMake(0.0, 0.0, 8.0, 20.0);
     UIBezierPath *ovalPath = [UIBezierPath bezierPathWithOvalInRect:rect];
@@ -61,8 +71,10 @@ const float PHOTO_VIEW_RATE = 0.25f;
     [sliderLayer setPosition:CGPointMake(4.0, 10.0)];
     [sliderLayer setPath: [ovalPath CGPath]];
     [sliderLayer setFillColor:[[UIColor whiteColor] CGColor]];
+    [sliderLayer setZPosition:4.0];
     
     [[self layer] addSublayer:controlLayer];
+    [controlLayer addSublayer:loadingLayer];
     [controlLayer addSublayer:sliderLayer];
 }
 
@@ -102,9 +114,12 @@ const float PHOTO_VIEW_RATE = 0.25f;
     int count = [photoFlood count];
     int loaded = [photoFlood numLoadedPhotos];
     float totalViewTime = count * PHOTO_VIEW_RATE;
-    float remainingDownloadTime = [photoFlood averageLoadTime] * (count - loaded);
+    float remainingDownloadTime = [photo loadTime] * (count - loaded);
     
     NSLog(@"average: %f", [photoFlood averageLoadTime]);
+    NSLog(@"total: %f, remaining: %f", totalViewTime, remainingDownloadTime);
+    
+    [loadingLayer setPosition:CGPointMake(306.0 * ((float)loaded / count) - 153.0, 7.0)];
     
     if (!isStarted && totalViewTime > remainingDownloadTime) {
         [self start];

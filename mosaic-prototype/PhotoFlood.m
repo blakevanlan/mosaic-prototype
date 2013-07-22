@@ -24,7 +24,7 @@
     if (self && arrayOfURLs) {
         // setup operation queue
         operationQueue = [NSOperationQueue new];
-        [operationQueue setMaxConcurrentOperationCount:4];
+        [operationQueue setMaxConcurrentOperationCount:3];
         
         photos = [NSMutableArray arrayWithCapacity:[arrayOfURLs count]];
         
